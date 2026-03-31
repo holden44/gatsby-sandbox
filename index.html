@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gatsby Sandbox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="landing">
+  <main class="landing-shell">
+    <div class="landing-card">
+      <p class="eyebrow">The Great Gatsby</p>
+      <h1>Something feels off in this book.</h1>
+      <p class="lede">
+        People say one thing, want another, and pretend a third.
+        Pick what you want to track as you read.
+      </p>
+
+      <div class="path-list">
+        <button class="path-button" onclick="choosePath('lies')">
+          <span class="path-title">Who’s lying</span>
+          <span class="path-desc">Follow rumor, secrecy, and self-invention.</span>
+        </button>
+
+        <button class="path-button" onclick="choosePath('money')">
+          <span class="path-title">How money works</span>
+          <span class="path-desc">Watch who pays, who escapes, and who gets protected.</span>
+        </button>
+
+        <button class="path-button" onclick="choosePath('image')">
+          <span class="path-title">Who controls their image</span>
+          <span class="path-desc">Track performance, reputation, and curated identity.</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

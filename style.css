@@ -1,0 +1,302 @@
+:root {
+  --bg: #f5f1ea;
+  --paper: #fbf8f3;
+  --ink: #1f1c18;
+  --muted: #6d655b;
+  --line: #d8d0c5;
+  --accent: #7d6a52;
+  --accent-soft: #eee5d8;
+  --highlight: #eadcc7;
+  --highlight-active: #dfc8a8;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button {
+  font: inherit;
+}
+
+.landing-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.landing-card {
+  max-width: 760px;
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 0.98;
+  font-weight: 600;
+}
+
+.lede {
+  max-width: 580px;
+  margin: 0 0 32px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.path-list {
+  display: grid;
+  gap: 14px;
+}
+
+.path-button {
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.path-title {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.path-desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+
+.reader-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(245, 241, 234, 0.94);
+  border-bottom: 1px solid var(--line);
+}
+
+.reader-topbar-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-label,
+.path-label {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.chapter-layout {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 48px;
+  align-items: start;
+}
+
+.chapter-main {
+  min-width: 0;
+}
+
+.reader-text {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.38rem;
+  line-height: 1.8;
+}
+
+.reader-text p {
+  margin: 0 0 26px;
+}
+
+.chapter-title {
+  font-size: 2.6rem;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.tracked {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 0.2em;
+  padding: 0.04em 0.08em;
+  cursor: pointer;
+}
+
+.highlight-passive {
+  background: var(--highlight);
+}
+
+.highlight-active {
+  background: var(--highlight-active);
+  box-shadow: 0 0 0 2px rgba(125, 106, 82, 0.12);
+}
+
+.chapter-panel {
+  min-width: 0;
+}
+
+.panel-sticky {
+  position: sticky;
+  top: 76px;
+  display: grid;
+  gap: 18px;
+}
+
+.panel-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.panel-kicker {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.panel-title {
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+
+.panel-text {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.panel-options {
+  display: grid;
+  gap: 10px;
+}
+
+.option-button {
+  text-align: left;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.panel-response {
+  margin: 16px 0 0;
+  color: var(--accent);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.record-list {
+  display: grid;
+  gap: 12px;
+}
+
+.record-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.record-item {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.record-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.record-label {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.record-choice {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.record-note {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--accent);
+  line-height: 1.45;
+}
+
+@media (max-width: 1100px) {
+  .chapter-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-sticky {
+    position: static;
+  }
+
+  .reader-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .reader-text {
+    font-size: 1.18rem;
+  }
+
+  .chapter-title {
+    font-size: 2rem;
+  }
+
+  .landing-card {
+    padding: 32px 24px;
+  }
+}
