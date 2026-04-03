@@ -4,6 +4,74 @@ function choosePath(path) {
 }
 
 const pathConfigs = {
+  influencer: {
+  label: "Tracking: what makes someone influential",
+  defaultTitle: "Let’s test your assumption.",
+  defaultText:
+    "You chose a theory about influence. As you read, we’ll see whether it holds—or starts to break.",
+  markers: {
+    marker1: {
+      kicker: "Influence test",
+      title: "Everyone knows something. No one knows him.",
+      text:
+        "People describe Gatsby in completely different ways. No one checks. No one confirms. But everyone pays attention.",
+      question:
+        "What’s actually making him powerful here?",
+      options: [
+        { value: "stories", text: "People don’t need truth—they need something interesting to repeat" },
+        { value: "mystery", text: "The mystery makes him more important" },
+        { value: "performance", text: "It’s not about him—people are enjoying the story" },
+        { value: "unsure", text: "I don’t know yet" }
+      ],
+      responses: {
+        stories: {
+          choice: "You think attention matters more than truth.",
+          note: "If that’s right, Gatsby’s influence exists before anyone meets him. Keep that in mind."
+        },
+        mystery: {
+          choice: "You’re leaning toward mystery as power.",
+          note: "That would mean absence is doing the work. Let’s see what happens when he appears."
+        },
+        performance: {
+          choice: "You’re focusing on the crowd, not Gatsby.",
+          note: "Interesting. That would mean influence lives in the audience, not the person."
+        },
+        unsure: {
+          choice: "You’re holding back judgment.",
+          note: "Fair. You may need more evidence before committing."
+        }
+      }
+    },
+
+    marker3: {
+      kicker: "Re-test",
+      title: "Now he’s here.",
+      text:
+        "You finally meet Gatsby. The question is whether his presence confirms what you expected—or complicates it.",
+      question:
+        "Does your earlier idea about influence still hold?",
+      options: [
+        { value: "still", text: "Yes, what I thought still explains him" },
+        { value: "changed", text: "No, something feels different now" },
+        { value: "both", text: "It’s more complicated than I expected" }
+      ],
+      responses: {
+        still: {
+          choice: "You’re sticking with your theory.",
+          note: "Then Gatsby fits the system you expected. Watch for anything that breaks it."
+        },
+        changed: {
+          choice: "You’re revising your thinking.",
+          note: "Good. Something about Gatsby doesn’t match the earlier pattern."
+        },
+        both: {
+          choice: "You’re holding two ideas at once.",
+          note: "That tension is probably where the real answer is."
+        }
+      }
+    }
+  }
+}
   lies: {
     label: "Tracking: who’s lying",
     defaultTitle: "Watch for unstable truth.",
@@ -364,8 +432,9 @@ function renderRecord(path) {
     .map(
       (entry) => `
         <div class="record-item">
-          <p class="record-label">${entry.title}</p>
+          <p class="record-label">Theory checkpoint</p>
           <p class="record-choice">${entry.choice}</p>
+<p class="record-note"><em>${entry.note}</em></p>
           <p class="record-note">${entry.note}</p>
         </div>
       `
