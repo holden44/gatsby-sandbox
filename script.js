@@ -1,4 +1,12 @@
 function choosePath(path) {
+  if (path === "influencer") {
+    const choice = prompt(
+      "Before you start:\n\nWhat makes someone influential?\n\nA: Image\nB: Access\nC: Attention\nD: Reinvention\n\nType A, B, C, or D:"
+    );
+
+    localStorage.setItem("influencer_commitment", choice || "unknown");
+  }
+
   localStorage.setItem("path", path);
   window.location.href = "read.html";
 }
@@ -71,7 +79,7 @@ const pathConfigs = {
       }
     }
   }
-}
+},
   lies: {
     label: "Tracking: who’s lying",
     defaultTitle: "Watch for unstable truth.",
@@ -434,8 +442,7 @@ function renderRecord(path) {
         <div class="record-item">
           <p class="record-label">Theory checkpoint</p>
           <p class="record-choice">${entry.choice}</p>
-<p class="record-note"><em>${entry.note}</em></p>
-          <p class="record-note">${entry.note}</p>
+          <p class="record-note"><em>${entry.note}</em></p>
         </div>
       `
     )
